@@ -1,0 +1,9 @@
+my_result = ''
+if 3 <= x <= 5:
+    my_result = 'spring'
+elif 6 <= x <= 8:
+    my_result = 'summer'
+elif 9 <= x <= 11:
+    my_result = 'autumn'
+else:
+    my_result = 'winter'

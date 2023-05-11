@@ -1,0 +1,1 @@
+my_result = int(avg_salary / 29.3 * days)
