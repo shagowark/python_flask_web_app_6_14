@@ -55,86 +55,75 @@ def failure():
 
 
 def check_task_1(code):
-    global x
-
-    x = 4
-    exec(code, globals())
-    if my_result != 'spring':
+    if execute_code_task1(code, 4) != 'spring':
         return False
 
-    x = 6
-    exec(code, globals())
-    if my_result != 'summer':
+    if execute_code_task1(code, 6) != 'summer':
         return False
 
-    x = 1
-    exec(code, globals())
-    if my_result != 'winter':
+    if execute_code_task1(code, 1) != 'winter':
         return False
 
-    x = 9
-    exec(code, globals())
-    if my_result != 'autumn':
+    if execute_code_task1(code, 9) != 'autumn':
         return False
 
     return True
+
+
+def execute_code_task1(code, a):
+    global x
+    x = a
+    exec(code, globals())
+    return my_result
 
 
 def check_task_2(code):
-    global n
 
-    n = 12
-    exec(code, globals())
-    if my_result != 3:
+    if execute_code_task2(code, 12) != 3:
         return False
 
-    n = 2
-    exec(code, globals())
-    if my_result != 2:
+    if execute_code_task2(code, 2) != 2:
         return False
 
-    n = 299
-    exec(code, globals())
-    if my_result != 20:
+    if execute_code_task2(code, 299) != 20:
         return False
 
-    n = 1000
-    exec(code, globals())
-    if my_result != 1:
+    if execute_code_task2(code, 1000) != 1:
         return False
 
     return True
+
+
+def execute_code_task2(code, a):
+    global n
+    n = a
+    exec(code, globals())
+    return my_result
 
 
 def check_task_3(code):
-    global avg_salary
-    global days
-
-    avg_salary = 10000
-    days = 14
-    exec(code, globals())
-    if my_result != 4778:
+    if execute_code_task3(code, 10000, 14) != 4778:
         return False
 
-    avg_salary = 23000
-    days = 10
-    exec(code, globals())
-    if my_result != 7849:
+    if execute_code_task3(code, 23000, 10) != 7849:
         return False
 
-    avg_salary = 1
-    days = 5
-    exec(code, globals())
-    if my_result != 0:
+    if execute_code_task3(code, 1, 5) != 0:
         return False
 
-    avg_salary = 123111
-    days = 0
-    exec(code, globals())
-    if my_result != 0:
+    if execute_code_task3(code, 123111, 0) != 0:
         return False
 
     return True
+
+
+def execute_code_task3(code, a, b):
+    global avg_salary
+    global days
+    avg_salary = a
+    days = b
+    exec(code, globals())
+    return my_result
 
 
 if __name__ == '__main__':
